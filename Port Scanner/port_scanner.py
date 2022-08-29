@@ -6,6 +6,7 @@ from datetime import datetime
 
 
 def connection(ip_address, port):
+    
     s = socket(AF_INET, SOCK_STREAM)
     s.settimeout(20)
     try:
@@ -16,6 +17,7 @@ def connection(ip_address, port):
 
 
 def scan(ip_address, ports):
+    
     print("Scanning ip address", colored(ip_address, 'green') + "...\n")
     scan_start = datetime.now()
     executor = ThreadPoolExecutor(len(ports))
@@ -33,6 +35,7 @@ def scan(ip_address, ports):
 
 
 def main():
+    
     tprint("TCP   PORT   SCANNER")
 
     host_ip = input(colored("Please enter an ip address, for scanning well-known open ports: ", 'yellow'))
